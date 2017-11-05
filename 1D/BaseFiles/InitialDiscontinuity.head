@@ -1,0 +1,67 @@
+//
+// Maintainer: Jorge De Anda Salazar
+// fang@lnm.mw.tum.de
+// http://www.lnm.mw.tum.de/
+// 089 - 289-15251
+//
+==================================================================
+General Data File BACI
+==================================================================
+-----------------------------------------------------------------------TITLE
+created by pre_MEXodus
+----------------------------------------------------------------PROBLEM SIZE
+//ELEMENTS    			512
+//NODES       			513
+DIM           			1
+-----------------------------------------------------------------PROBLEM TYP
+PROBLEMTYP                      Variational_Chemical_Diffusion
+----------------------------------------------------SCALAR TRANSPORT DYNAMIC
+LINEAR_SOLVER                   1
+SOLVERTYPE                      nonlinear
+FSSUGRDIFF                      No
+INITFUNCNO                      1
+INITIALFIELD                    algebraic_field_dependence
+MAXTIME                         1190.47619048		// approx L^2/D since here it is when it is almost reached the steady state (see analitical solution Crank-The mathematic of Diffusion (Eq. 2.67) )
+NUMSTEP                         64
+RESTARTEVRY                     10
+THETA                           0.66
+TIMEINTEGR                      One_Step_Theta
+TIMESTEP                        18.6011904762
+VELOCITYFIELD                   zero
+RESULTSEVRY                     1
+MATID                           1
+SKIPINITDER                     Yes
+MATLAB_STATE_OUTPUT             No
+SEMIMPLICITFUNCTIONAL		No
+BLOCKPRECOND                    No
+CALCERROR                       AnalyticSeries
+------------------------------------------SCALAR TRANSPORT DYNAMIC/NONLINEAR
+CONVTOL                         1e-10
+ABSTOLRES                       1e-16
+ITEMAX                          50
+EXPLPREDICT                     no                              // yes -> oscillations for neutral
+ADAPTCONV                       no
+ADAPTCONV_BETTER                0.1
+--------------------------------------SCALAR TRANSPORT DYNAMIC/STABILIZATION
+STABTYPE                        no_stabilization
+DEFINITION_TAU                  Zero
+EVALUATION_MAT                  integration_point
+EVALUATION_TAU                  integration_point
+--------------------------------------------------------------------SOLVER 1
+SOLVER                          UMFPACK
+//--------------------------------------------------------------------SOLVER 1
+//SOLVER                          Aztec_MSR
+//AZPREC                          AMGnxn
+//AMGNXN_TYPE                     XML
+//AMGNXN_XML_FILE                 1Test.xml
+-------------------------------------------------------------------MATERIALS
+MAT 1 MAT_variational_chemicaldiffusion DIFFUSIVITY 8.4e-10 REFMU -190000.0 REFC 26.496 REFTEMP 298.15 GASCON 8.314 MODEL Fickean
+----------------------------------------------------------------------FUNCT1
+COMPONENT 0 FUNCTION 0.0 	//initial concentration field: µmol/mm³ (related to chemical potential by the Mass action law)
+COMPONENT 1 FUNCTION -190.0e3 	//initial chemical potential
+----------------------------------------------------------------------FUNCT2
+COMPONENT 0 FUNCTION 0.0
+COMPONENT 1 FUNCTION -175.0e3
+----------------------------------------------------------------------FUNCT3
+COMPONENT 0 FUNCTION 0.0
+

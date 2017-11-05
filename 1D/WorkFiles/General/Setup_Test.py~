@@ -1,0 +1,136 @@
+#!/usr/bin/python
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+from shutil import copyfile
+from Create_datFile import Create_datFile1D
+
+
+def Modify_datFile(find, replace, datFile):
+    os.system('sed -i "s/^""' + find + '"".*$/""' +
+              replace + '""/g" "' + datFile + '"')
+
+
+def Modify_datFileTestParameters(AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile):
+    # Adjusting headerFile according to parameters
+    # Mesh parameters
+    find = '\/\/ELEMENTS'
+    replace = '\/\/ELEMENTS    			' + str(Nx)
+    Modify_datFile(find, replace, path_datFile)
+    if (ElementType == 'LINE2'):
+        Nodes = Nx + 1
+    elif (ElementType == 'LINE3'):
+        Nodes = 2 * Nx + 1
+    else:
+        print(NotImplementedError)
+    find = '\/\/NODES'
+    replace = '\/\/NODES       			' + str(Nodes)
+    Modify_datFile(find, replace, path_datFile)
+    # Time paramters
+    find = 'MAXTIME'
+    replace = 'MAXTIME                         1190.47619048		\/\/ approx L^2\/D '
+    Modify_datFile(find, replace, path_datFile)
+    find = 'NUMSTEP'
+    replace = 'NUMSTEP                         ' + str(Nt)
+    Modify_datFile(find, replace, path_datFile)
+    find = 'TIMESTEP'
+    replace = 'TIMESTEP                        18.6011904762'
+    Modify_datFile(find, replace, path_datFile)
+    # Numerical strategy parameters
+    if (Scheme == 'SI'):
+        find = 'SEMIMPLICITFUNCTIONAL'
+        replace = 'SEMIMPLICITFUNCTIONAL		Yes'
+        Modify_datFile(find, replace, path_datFile)
+
+    if (AlgCoupling != 'Mono'):
+        print "Not coded yet part with preconditioners"
+
+
+def RatioNxNt_Fix(AlgCoupling, Strategy, Scheme, ElementType, ratio, Nt_list, L, headerFile):
+    print "----------------------Creating files for Fixed Nx/Nt ratio test-------------\n"
+    for Nt in Nt_list:
+        Nx = Nt * ratio
+
+        datFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+            ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt) + '.dat'
+        print '+Creating datFile : \n\t' + datFile + '\n'
+
+        cwd = os.getcwd()
+        path_datFile = cwd + '/../datFiles/' + datFile
+
+        if (not os.path.isfile(path_datFile)):
+            Create_datFile1D(ElementType, Nx, L, headerFile, path_datFile)
+            Modify_datFileTestParameters(
+                AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile)
+        else:
+            print 'The dat file: \n' + path_datFile + '\nfor this test is already created'
+    # Numerical Reference Solution
+    # Nt =
+    # Nx = ratio*Nt
+
+    # datFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+    #         ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt) + '.dat'
+    # print 'Creating datFile (numerical reference) : \n\t' + datFile + '\n'
+    #     cwd = os.getcwd()
+    #     path_datFile = cwd + '/../datFiles/' + datFile
+
+    # Create_datFile1D(ElementType, Nx, L, headerFile, path_datFile)
+    # Modify_datFileTestParameters(AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile)
+
+
+def Omega_hFix(AlgCoupling, Strategy, Scheme, ElementType, Nx, Nt_list, L, headerFile):
+    print "----------------------Creating files for Omega_h test-------------\n"
+    for Nt in Nt_list:
+        datFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+            ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt) + '.dat'
+        print '+Creating dat file:\n\t' + datFile + '\n'
+
+        cwd = os.getcwd()
+        path_datFile = cwd + '/../datFiles/' + datFile
+        if (not os.path.isfile(path_datFile)):
+            Create_datFile1D(ElementType, Nx, L, headerFile, path_datFile)
+            Modify_datFileTestParameters(
+                AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile)
+        else:
+            print 'The dat file: \n' + path_datFile + '\nfor this test is already created'
+    # Numerical Referebce Solution
+    # Nt =
+
+    # datFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+    #         ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt) + '.dat'
+    # print 'Creating datFile (numerical reference) : \n\t' + datFile + '\n'
+    #     cwd = os.getcwd()
+    #     path_datFile = cwd + '/../datFiles/' + datFile
+
+    # Create_datFile1D(ElementType, Nx, L, headerFile, path_datFile)
+    # Modify_datFileTestParameters(AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile)
+
+
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+# ----------                  MAIN CODE       ---------------------
+# ------------------------------------------------------------------
+# ------------------------------------------------------------------
+
+
+# # Parameters for mesh
+# AlgCoupling = 'Mono'
+# Strategy = 'NM'
+# ElementType = 'LINE3'  # 'LINE2'
+# Scheme = 'FI'
+# L = 1e-3
+# Nt_list = [2, 4]
+# headerFile = 'InitialDiscontinuity.head'
+
+# cwd = os.getcwd()  # Gets current directory
+# path_header = cwd + '/../../BaseFiles/' + headerFile
+
+# # Running Omega_hFix test
+# Nx = 4
+# Omega_hFix(AlgCoupling, Strategy, Scheme,
+#            ElementType, Nx, Nt_list, L, path_header)
+
+# ratio = 2
+# # Running Fix ratio test
+# RatioNxNt_Fix(AlgCoupling, Strategy, Scheme,
+#               ElementType, ratio, Nt_list, L, path_header)

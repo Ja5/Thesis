@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+-->
+<VTKFile type="Collection" version="0.1" ByteOrder="LittleEndian">
+  <Collection>
+    <DataSet timestep="0" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-0.pvtu"/>
+    <DataSet timestep="148.81" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-1.pvtu"/>
+    <DataSet timestep="297.619" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-2.pvtu"/>
+    <DataSet timestep="446.429" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-3.pvtu"/>
+    <DataSet timestep="595.238" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-4.pvtu"/>
+    <DataSet timestep="744.048" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-5.pvtu"/>
+    <DataSet timestep="892.857" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-6.pvtu"/>
+    <DataSet timestep="1041.67" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-7.pvtu"/>
+    <DataSet timestep="1190.48" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-8.pvtu"/>
+  </Collection>
+</VTKFile>

@@ -1,0 +1,48 @@
+// Parameters Main Test
+//--------------------------------------- PARAMETERS
+AlgCoupling = Mono
+Strategy = NM
+ElementType = LINE2
+Scheme = FI
+Model = Fickean
+L = 1e-3
+samplePoints = 1
+
+//---------------------------------------- SPECIFICS
+ErrorType = 'L2Error/TimeInt'
+
+Action = 	'S'  	-> Setup
+		'R'  	-> Run
+		'P'  	-> PostProcess
+		'SRP'  	-> Setup/Run/PostProcess
+		'h'	-> Compare against numerical reference
+
+# Omega_hFix test
+Nx = 10
+
+# Fix ratio test
+ratio = 2
+
+//----------------------------------------- DESCRIPTIONS
+AlgCoupling = Mono / Nest / Stag
+
+Strategy = 	NM -> NewtonMethod (Monolithic)
+		AMG -> AlgebraicMultigrid (Monolithic)
+		GLoC -> Global-Local (Nested)
+		AACE -> Artificial added concentration effect (Staggered)
+
+ElementType = 	LINE2 (1D)
+		LINE3 (1D)
+		QUAD4 (2D)
+		TRI3  (2D)
+
+Scheme = 	FI -> Fully Implicit
+		SI -> Semi Implicit
+
+Model = 	Fickean
+		Linear
+
+
+L		-> Domain Length (1D)
+
+samplePoints

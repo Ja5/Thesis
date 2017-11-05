@@ -1,0 +1,111 @@
+#!/usr/bin/python
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+from shutil import copyfile
+from Create_datFile import Create_datFile1D
+
+
+def Run_RatioNxNt_Fix(AlgCoupling, Strategy, Scheme, ElementType, ratio, Nt_list, L, path_baci, path_Results, path_logFiles):
+    print "----------------------Running Fixed Nx/Nt ratio test-------------\n"
+    for Nt in Nt_list:
+        Nx = Nt * ratio
+
+        actFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+            ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+        datFile = actFile + '.dat'
+        print '+Running datFile : \n\t' + datFile + '\n'
+
+        cwd = os.getcwd()
+        path_datFile = cwd + '/../datFiles/' + datFile
+
+        if (os.path.isfile(path_datFile)):
+            print 'run baci for datfile ' + path_datFile + '\n'
+            print 'run post_drt_ensight for ' + actFile + '\n'
+            print 'run what Alex did for importing resulys' + '\n'
+        else:
+            print 'The dat file: \n' + path_datFile + '\nfor this test is does not exist' + '\n'
+    # Numerical Reference Solution
+    # Nt =
+    # Nx = ratio*Nt
+    # actFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+    #         ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+    # datFile = actFile + '.dat'
+    # print '+Running datFile : \n\t' + datFile + '\n'
+    # cwd = os.getcwd()
+    # path_datFile = cwd + '/../datFiles/' + datFile
+
+    # If (os.path.isfile(path_datFile)):
+    #     print '+Running datFile : \n\t' + datFile + '(numerical reference)\n'
+    #     print 'run baci for datfile ' + path_datFile + '\n'
+    #     print 'run post_drt_ensight for ' + actFile + '\n'
+    #     print 'run what Alex did for importing resulys' + '\n'
+    # else:
+    #     print 'The dat file: \n' + path_datFile + '\nfor this test is does not exist' + '\n'
+
+
+def Run_Omega_hFix(AlgCoupling, Strategy, Scheme, ElementType, Nx, Nt_list, L, path_baci, path_Results, path_logFiles):
+    print "----------------------Running Fixed Nx/Nt ratio test-------------\n"
+    for Nt in Nt_list:
+        actFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+            ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+        datFile = actFile + '.dat'
+        print '+Running datFile : \n\t' + datFile + '\n'
+
+        cwd = os.getcwd()
+        path_datFile = cwd + '/../datFiles/' + datFile
+
+        if (os.path.isfile(path_datFile)):
+            print 'run baci for datfile ' + path_datFile + '\n'
+            print 'run post_drt_ensight for ' + actFile + '\n'
+            print 'run what Alex did for importing resulys' + '\n'
+        else:
+            print 'The dat file: \n' + path_datFile + '\nfor this test is does not exist' + '\n'
+    # Numerical Reference Solution
+    # Nt =
+    # actFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+    #         ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+    #     datFile = actFile + '.dat'
+    #     print '+Running datFile : \n\t' + datFile + '\n'
+
+    #     cwd = os.getcwd()
+    #     path_datFile = cwd + '/../datFiles/' + datFile
+    # If (os.path.isfile(path_datFile)):
+    #     print '+Running datFile : \n\t' + datFile + '(numerical reference)\n'
+    #     print 'run baci for datfile ' + path_datFile + '\n'
+    #     print 'run post_drt_ensight for ' + actFile + '\n'
+    #     print 'run what Alex did for importing resulys' + '\n'
+    # else:
+    #     print 'The dat file: \n' + path_datFile + '\nfor this test is does not exist' + '\n'
+
+
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+# # ----------                  MAIN CODE       ---------------------
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+
+
+# # Parameters for mesh
+# AlgCoupling = 'Mono'
+# Strategy = 'NM'
+# ElementType = 'LINE3'  # 'LINE2'
+# Scheme = 'FI'
+# L = 1e-3
+# Nt_list = [2, 4]
+# #headerFile = 'InitialDiscontinuity.head'
+# # Directories
+# cwd = os.getcwd()  # Gets current directory
+# path_baci = '~/workspace/baci/build/release'
+# path_Results = '/../../Output/Results'
+# path_logFiles = '/../../Output/logFiles'
+
+# # Running Omega_hFix test
+# Nx = 4
+# Run_Omega_hFix(AlgCoupling, Strategy, Scheme,
+#                ElementType, Nx, Nt_list, L, path_baci, path_Results, path_logFiles)
+
+# ratio = 2
+# # Running Fix ratio test
+# Run_RatioNxNt_Fix(AlgCoupling, Strategy, Scheme,
+#                   ElementType, ratio, Nt_list, L, path_baci, path_Results, path_logFiles)

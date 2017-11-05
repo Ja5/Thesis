@@ -1,0 +1,200 @@
+import numpy as np
+import math
+
+
+def ReadTestParameters():
+    with open('TestParameters.dat', 'r') as f:
+        for line in f:
+            if 'AlgCoupling' in line:
+                temp = line.translate(None, "[]'").split('=', 1)[1]
+                AlgCoupling = temp.split(',')
+            elif 'Strategy' in line:
+                temp = line.translate(None, "[]'").split('=', 1)[1]
+                Strategy = temp.split(',')
+            elif 'Scheme' in line:
+                temp = line.translate(None, "[]'").split('=', 1)[1]
+                Scheme = temp.split(',')
+            elif 'ElementType1D' in line:
+                temp = line.translate(None, "[]'").split('=', 1)[1]
+                ElementType1D = temp.split(',')
+            elif 'Model' in line:
+                temp = line.translate(None, "[]'").split('=', 1)[1]
+                Model = temp.split(',')
+    return [AlgCoupling, Strategy, Scheme, ElementType1D, Model]
+
+
+def ExtractRefDataFromAction(Action):
+    if 'h' in Action:
+        import re
+        Data = map(int, re.findall(r'\d+', Action.split('h', 1)[1]))
+        Omega = Data[0:-1]
+        Nt = Data[-1]
+        return Omega, Nt
+    else:
+        return -1
+
+# Extracts from row in fileName the variable's nodal-value :
+
+
+def ReadNodeValue(fileName, variable, row):
+    Str = '<DataArray type="Float64" Name="' + variable + '" format="ascii">'
+    with open(filepath, 'r') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                print 'ERROR: Node ' + str(row) + '  not found in ' + fileName
+                break
+            elif Str in line:
+                for _ in xrange(row):
+                    f.readline()
+                return float(f.readline())
+                break
+
+# Extracts from fileName all the dof per node element : nodeVar[node][dof]
+
+
+def GetElementNodalValues(fileName, NodesXele, row):
+    nodeVar = []
+    for node in xrange(0, NodesXele):
+        # Get simulation results
+        Variable = [0.0, 0.0]
+        Variable[0] = ReadNodeValue(fileName, 'phi_1', row + node)
+        Variable[1] = ReadNodeValue(fileName, 'phi_2', row + node)
+        nodeVar.append(Variable[:])
+    return nodeVar
+
+# Extracts from row in fileName the coordinates
+
+
+def ReadCoordinate(fileName, row):
+    coords = [0.0, 0.0, 0.0]
+    Str = '<DataArray type="Float64" NumberOfComponents="3" format="ascii">'
+    with open(filepath, 'r') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                print 'ERROR: Node ' + str(row) + '  not found in ' + fileName
+                break
+            elif Str in line:
+                for _ in xrange(row):
+                    f.readline()
+                temp = f.readline().split()
+                for i in xrange(len(temp)):
+                    coords[i] = float(temp[i])
+                return coords
+                break
+
+# Extracts from fileName all the Node coordinates per element : eleCoord[node][xyz]
+
+
+def GetElementCoordinates(fileName, NodesXele, row):
+    eleCoord = []
+    for node in xrange(0, NodesXele):
+        # Get mesh coordinates
+        coords = ReadCoordinate(fileName, row + node)
+        eleCoord.append(coords)
+    return eleCoord
+
+
+def GetAxisCoordinates(eleCoord, axis, NodesXele):
+    x = []
+    if axis == 'x':
+        for i in xrange(NodesXele):
+            x.append(eleCoord[i][0])
+    elif axis == 'y':
+        for i in xrange(NodesXele):
+            x.append(eleCoord[i][1])
+    elif axis == 'z':
+        for i in xrange(NodesXele):
+            x.append(eleCoord[i][2])
+    return x
+
+
+def ComputeErrorsNumericReference(SimulationFileName, ReferenceFileName, ElementType, Nx):
+    from FEM import ElementIntegral
+    from FEM import getNodesperElement
+
+    NodesXele = getNodesperElement(ElementType)
+    degpolynomial = 3
+
+    ErrorC = 0.0
+    ErrorMu = 0.0
+    Area_RefC = 0.0
+    Area_RefMu = 0.0
+
+    row = 0
+    for ele in xrange(0, Nx):
+
+        # Simulation[element][elementNode][dof]
+        # Simulation.append(GetElementNodalValues(SimulationFileName,NodesXele,row))
+        # Reference[element][elementNode][dof]
+        # Reference.append(GetElementNodalValues(ReferenceFileName,NodesXele,row))
+        print SimulationFileName
+        print ReferenceFileName
+
+        Sim = GetElementNodalValues(
+            SimulationFileName, NodesXele, row)  # Sim[node][dof]
+        Ref = GetElementNodalValues(
+            ReferenceFileName, NodesXele, row)  # Ref[node][dof]
+        coords = GetElementCoordinates(SimulationFileName, NodesXele, row)
+
+        print Sim[0]
+        print Ref[0]
+
+        #row = row + NodesXele
+        #print [coords[0][0], coords[1][0]]
+        xCoord = GetAxisCoordinates(coords, 'x', NodesXele)
+
+        # Convert list into array to separate variables ---- arrary[node][dof]
+        simResults = np.asarray(Sim, dtype=np.float32)
+        refResults = np.asarray(Ref, dtype=np.float32)
+        Diff_c = simResults[:, 0] - refResults[:, 0]
+        Diff_mu = simResults[:, 1] - refResults[:, 1]
+
+        # Add element integrals
+        ErrorC = ElementIntegral(Diff_c**2, degpolynomial,
+                                 xCoord, ElementType) + ErrorC
+        ErrorMu = ElementIntegral(Diff_mu**2, degpolynomial,
+                                  xCoord, ElementType) + ErrorMu
+        Area_RefC = ElementIntegral(
+            refResults[:, 0]**2, degpolynomial, xCoord, ElementType) + Area_RefC
+        Area_RefMu = ElementIntegral(
+            refResults[:, 1]**2, degpolynomial, xCoord, ElementType) + Area_RefMu
+
+        row = row + NodesXele
+    #print [math.sqrt(Area_RefC), math.sqrt(Area_RefMu)]
+    return [math.sqrt(ErrorC) / math.sqrt(Area_RefC), math.sqrt(ErrorMu) / math.sqrt(Area_RefMu)]
+
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+# # ----------                  MAIN CODE       ---------------------
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+
+
+#AlgCoupling,Strategy,Scheme,ElementType1D,Model = ReadTestParameters()
+
+Action = 'SRPhNx=10-Nt=11'
+
+Omega, Nt = ExtractRefDataFromAction(Action)
+Nx = Omega[0]  # This depends on the dimension of the problem
+
+# Read Files
+import os
+cwd = os.getcwd()
+dir_Results = cwd + '/../../Output/Results'
+fileName = '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-1-0.vtu'
+
+# Get values for Current simulation
+filepath = dir_Results + fileName
+Nx = 8
+ElementType = 'LINE2'
+
+SimulationFileName = filepath
+ReferenceFileName = dir_Results + \
+    '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-2-0.vtu'
+
+print ComputeErrorsNumericReference(SimulationFileName, ReferenceFileName, ElementType, Nx)
+
+
+print 'FIN'

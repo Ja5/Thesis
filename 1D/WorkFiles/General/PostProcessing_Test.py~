@@ -1,0 +1,158 @@
+import os
+import numpy as np
+import csv
+
+
+# Read element and its nodes from Baci
+
+def GetNodes_datFile(datFile):
+    with open(datFile, 'r') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                print 'ERROR: Number of nodes not found in ' + datFile
+                return -1
+                break
+            if 'Nodes' in line:
+                for nodes in line.split():
+                    if nodes.isdigit():
+                        return int(nodes)
+                        break
+
+
+def ReadNodeError_relErrorFile(fileName, node):
+    with open(fileName, 'r') as f:
+        for _ in xrange(node):
+            next(f)
+        line = next(f)
+        if not line:
+            print 'Node (' + str(node) + ') not found in ' + fileName
+            return -1
+        dataStr = line.split()
+        return float(dataStr[-2]), float(dataStr[-1])
+
+
+def GetNodeCoordFrom_datFile(datFile, node):
+    with open(datFile, 'r') as f:
+        while True:
+            line = f.readline()
+            if 'NODE COORDS' in line:
+                for _ in xrange(node - 1):
+                    line = f.readline()
+                line = f.readline()
+                coords = line.split()
+                break
+            if not line:
+                break
+    return coords[3:6]
+
+
+def L2Error_relErrorFile(datFile, resultsFile):
+    ErrorC = 0
+    ErrorMu = 0
+    nodes = GetNodes_datFile(datFile)
+    if nodes == -1:
+        print "ERROR: Nodes not found in call to: GetNodes_datFile"
+    for node in xrange(1, nodes + 1):
+        nodalError = ReadNodeError_relErrorFile(resultsFile, node)
+        if nodalError == -1:
+            print "ERROR: Nodes not found in call to: ReadNodeError_relErrorFile"
+        ErrorC = nodalError[0]**2 + ErrorC
+        ErrorMu = nodalError[1]**2 + ErrorMu
+    return ErrorC, ErrorMu
+
+
+def IntegrateFEMFrom_datFile(datFile):
+    with open(path_datFile, 'r') as f:
+        while True:
+            line = f.readline()
+            if 'TRANSPORT ELEMENTS' in line:
+                while True:
+                    line = f.readline()
+
+                    if not line:
+                        print 'Not END of BACI dat-file found'
+                        break
+                    elif 'END' in line:
+                        break
+                    else:
+                        description = line.split()
+                        if (description[2] == 'LINE2'):
+                            Nodes = description[3:5]
+                        elif (description[2] == 'LINE3'):
+                            Nodes = description[3:6]
+                        # print 'Element = ' + str(description[0]) + '\n'
+                        for node in Nodes:
+                            coords = GetNodeCoordFrom_datFile(
+                                path_datFile, int(node))
+                            print 'GetQuadrature points before  nodes loop andhere: Read result and interpolate, save in a resultFile to later use ReadNodeError_relErrorFile'
+                            # print '\t xCoord = ' + str(coords[0]) + '\n'
+
+            if not line:
+                break
+
+
+def PostProcess_Omega_hFix(AlgCoupling, Strategy, Scheme,
+                           ElementType, Nx, Nt_list, L, path_baci, path_Results, path_logFiles):
+    print "--------------------PostProcessing files for Omega_h test-----------\n"
+    Errors = []
+    for i, Nt in enumerate(Nt_list):
+        actFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+            ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+        datFile = actFile + '.dat'
+        print '+PostProcessing_Test datFile : \n\t' + datFile + '\n'
+
+        cwd = os.getcwd()
+        path_datFile = cwd + '/../datFiles/' + datFile
+        path_Results = cwd + '/../../Output/Results/' + actFile
+        path_Results = 'EjemploResult.csv'
+        print 'CHANGE in PostProcess_Omega_hFix path_Results'
+
+        if (os.path.isfile(path_datFile)):
+            if (os.path.isfile(path_resultsFile)):
+                Errors.append(L2Error_relErrorFile(
+                    path_datFile, path_resultsFile))
+                print i
+                print Errors
+            else:
+                print 'ERROR : The dat file: \n' + path_datFile + '\nfor this test does not exist'
+        else:
+            print 'ERROR : The dat file: \n' + path_datFile + '\nfor this test does not exist'
+    # Numerical Referebce Solution
+    # Nt =
+
+    # datFile = AlgCoupling + Strategy + '_' + Scheme + '_' + \
+    #         ElementType + '_Nx' + str(Nx) + '_Nt' + str(Nt) + '.dat'
+    # print 'Creating datFile (numerical reference) : \n\t' + datFile + '\n'
+    #     cwd = os.getcwd()
+    #     path_datFile = cwd + '/../datFiles/' + datFile
+
+    # Create_datFile1D(ElementType, Nx, L, headerFile, path_datFile)
+    # Modify_datFileTestParameters(AlgCoupling, Strategy, Scheme, ElementType, Nt, Nx, L, path_datFile)
+
+    return Errors
+
+
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+# # ----------                  MAIN CODE       ---------------------
+# # ------------------------------------------------------------------
+# # ------------------------------------------------------------------
+
+
+cwd = os.getcwd()
+datFile = 'MonoNM_FI_LINE2_Nx4_Nt2.dat'
+path_datFile = cwd + '/../datFiles/' + datFile
+path_resultsFile = cwd + '/EjemploResult.csv'
+
+
+resultsFile = path_resultsFile
+datFile = path_datFile
+node = 3
+
+Error = []
+Error.append(L2Error_relErrorFile(datFile, resultsFile))
+
+print Error
+
+# IntegrateFEMFrom_datFile(path_datFile)

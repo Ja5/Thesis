@@ -1,0 +1,480 @@
+(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+********************************************************************************************************************************************
+
+****************************************************************Omega_h test****************************************************************
+
+********************************************************************************************************************************************
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8/../Tests/NxFix10_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8/../Tests/NxFix10_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt16.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt16.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt16 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt16.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt16
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt16 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 8 LINE2 element(s) as 8 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt16/../Tests/NxFix10_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt16/../Tests/NxFix10_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt32.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt32.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt32 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt32.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt32
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt32 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt32/../Tests/NxFix10_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt32/../Tests/NxFix10_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+********************************************************************************************************************************************
+
+*************************************************************RatioNxNt_Fix test*************************************************************
+
+********************************************************************************************************************************************
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx8_Nt8.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx8_Nt8.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx8_Nt8 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx8_Nt8.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx8_Nt8
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiwriting dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 16 LINE2 element(s) as 16 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 32 LINE2 element(s) as 32 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+ffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx8_Nt8 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx8_Nt8/../Tests/RatioNxNt1_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx8_Nt8/../Tests/RatioNxNt1_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx16_Nt16.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx16_Nt16.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx16_Nt16 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx16_Nt16.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx16_Nt16
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx16_Nt16 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx16_Nt16/../Tests/RatioNxNt1_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx16_Nt16/../Tests/RatioNxNt1_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx32_Nt32.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoNM_FI_Fickean_LINE2_Nx32_Nt32.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx32_Nt32 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoNM_FI_Fickean_LINE2_Nx32_Nt32.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx32_Nt32
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscwriting dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+ontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx32_Nt32 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx32_Nt32/../Tests/RatioNxNt1_L2Error_MonoNM_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx32_Nt32/../Tests/RatioNxNt1_TimeInt_MonoNM_FI_Fickean_LINE2.txt
+
+********************************************************************************************************************************************
+
+****************************************************************Omega_h test****************************************************************
+
+********************************************************************************************************************************************
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8/../Tests/NxFix10_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8/../Tests/NxFix10_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16.txt
+
+
+Running post_drt_ensigh(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 10 LINE2 element(s) as 10 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+t:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16/../Tests/NxFix10_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt16/../Tests/NxFix10_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+
+----------------------Checking files for NxFix10 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32.dat
+----------------------Running files for NxFix10 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for NxFix10 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32/../Tests/NxFix10_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt32/../Tests/NxFix10_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+
+********************************************************************************************************************************************
+
+*************************************************************RatioNxNt_Fix test*************************************************************
+
+********************************************************************************************************************************************
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFile(computing) coordinates for a Polynomial approximation
+writing 8 LINE2 element(s) as 8 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+(computing) coordinates for a Polynomial approximation
+writing 16 LINE2 element(s) as 16 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+s/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8/../Tests/RatioNxNt1_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8/../Tests/RatioNxNt1_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16/../Tests/RatioNxNt1_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx16_Nt16/../Tests/RatioNxNt1_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+
+----------------------Checking files for RatioNxNt1 test-------------
+
+WARNING: The file already exists. It was not generated 
+	/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32.dat
+----------------------Running files for RatioNxNt1 test-------------
+
+
+Running baci:
+/home/salazar/workspace/build-release/baci-release /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fic(computing) coordinates for a Polynomial approximation
+writing 32 LINE2 element(s) as 32 bar2 ensight cell(s)...
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+writing dof-based field phi_1
+writing dof-based field phiAnalytic_1
+writing dof-based field phi_2
+writing dof-based field phiAnalytic_2
+writing element-based field Owner
+kean_LINE2_Nx32_Nt32.dat /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32 >> /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/logFiles/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32.txt
+
+
+Running post_drt_ensight:
+/home/salazar/workspace/build-release/post_drt_ensight  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32
+
+
+Running post_processor:
+/home/salazar/workspace/build-release/post_processor  --file=/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32 --filter=vtu --outputtype=ascii
+
+----------------------Post-processing files for RatioNxNt1 test-------------
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32/../Tests/RatioNxNt1_L2Error_MonoAMG_FI_Fickean_LINE2.txt
+
+Saving L2Error/TimeInt results into file:
+/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx32_Nt32/../Tests/RatioNxNt1_TimeInt_MonoAMG_FI_Fickean_LINE2.txt
+

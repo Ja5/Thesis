@@ -1,0 +1,182 @@
+# baci output control file
+# created by salazar on mises.lnm.mw.tum.de at Mon Oct 30 12:06:09 2017
+# using code revision 23385 
+
+input_file = "/home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.dat"
+problem_type = "Variational_Chemical_Diffusion"
+spatial_approximation = "Polynomial"
+ndim = 1
+
+field:
+    field = "scatra"
+    time = 0
+    step = 0
+
+    num_nd = 9
+    max_nodeid = 8
+    num_ele = 8
+    num_dof = 18
+
+    mesh_file = "MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.mesh.scatra.s0"
+
+result:
+    field = "scatra"
+    time = 0
+    step = 0
+
+    result_file = "MonoAMG_FI_Fickean_LINE2_Nx8_Nt8.result.scatra.s0"
+
+    Owner:
+        type = "element"
+        columns = 1
+        values = "/step0/Owner.values"
+        ids = "/step0/Owner.ids"
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step0/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step0/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 148.80952381
+    step = 1
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step1/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step1/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 297.61904762
+    step = 2
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step2/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step2/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 446.42857143
+    step = 3
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step3/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step3/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 595.23809524
+    step = 4
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step4/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step4/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 744.04761905
+    step = 5
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step5/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step5/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 892.85714286
+    step = 6
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step6/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step6/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 1041.66666667
+    step = 7
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step7/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step7/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+
+result:
+    field = "scatra"
+    time = 1190.47619048
+    step = 8
+
+    phinp:
+        type = "dof"
+        columns = 1
+        values = "/step8/phinp.values"
+        ids = "/step0/phinp.ids"
+
+    phiAnalytic:
+        type = "dof"
+        columns = 1
+        values = "/step8/phiAnalytic.values"
+        ids = "/step0/phinp.ids"
+

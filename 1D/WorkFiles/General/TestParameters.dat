@@ -1,0 +1,7 @@
+#-----------------------------------------------Parameters List
+
+AlgCoupling = ['Mono', 'Nested', 'Stag']
+Strategy = ['NM', 'AMG']
+Scheme = ['FI', 'SI']
+ElementType = ['LINE2', 'LINE3']
+Model = ['Fickean', 'Linear']

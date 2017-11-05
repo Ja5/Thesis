@@ -1,0 +1,7 @@
+import csv
+
+result = 1
+with open('EjemploResults.csv', encoding="utf-8") as f:
+    for line in f:
+        word, number = line.split()  # line.split("\t") if numbers are seperated by tab
+        result = result * float(number)

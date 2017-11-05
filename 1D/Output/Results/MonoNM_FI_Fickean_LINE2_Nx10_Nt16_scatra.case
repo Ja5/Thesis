@@ -1,0 +1,54 @@
+# created using post_drt_ensight
+FORMAT
+
+type:	ensight gold
+
+GEOMETRY
+
+model:	2	1	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.geo
+
+VARIABLE
+
+scalar per element:	1	2	Owner	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.Owner
+scalar per node:	3	3	phiAnalytic_1	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.phiAnalytic_1
+scalar per node:	3	4	phiAnalytic_2	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.phiAnalytic_2
+scalar per node:	3	5	phi_1	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.phi_1
+scalar per node:	3	6	phi_2	MonoNM_FI_Fickean_LINE2_Nx10_Nt16_scatra.phi_2
+
+TIME
+
+time set:		1
+number of steps:	1
+time values: 0 
+
+time set:		2
+number of steps:	1
+time values: 0 
+
+time set:		3
+number of steps:	17
+time values: 0 74.404761905 148.80952381 223.214285715 297.61904762 372.023809525 446.42857143 520.833333335 595.23809524 
+669.642857145 744.04761905 818.452380955 892.85714286 967.2619047649999 1041.66666667 1116.071428575 1190.47619048 
+
+
+
+FILE
+
+file set:		1
+number of steps:	1
+
+file set:		2
+number of steps:	1
+
+file set:		3
+number of steps:	17
+
+file set:		4
+number of steps:	17
+
+file set:		5
+number of steps:	17
+
+file set:		6
+number of steps:	17
+

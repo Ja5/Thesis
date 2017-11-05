@@ -1,0 +1,321 @@
+
+****************************************
+*                                      *
+*               B A C I                *
+*                                      *
+*                                      *
+*            revision 23385            *
+*           parallel version           *
+*             fast version             *
+*                                      *
+*  Lehrstuhl fuer Numerische Mechanik  *
+*                 LNM                  *
+*   Technische Universitaet Muenchen   *
+*                                      *
+*    (c) 2010 All Rights Reserved.     *
+*                                      *
+****************************************
+
+Baci SHA1: Think about using git
+Trilinos SHA1: root-of-trilinos-release-12-2-branch-815-g7824f3e
+Total number of processors: 1
+input is read from     /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../datFiles/MonoAMG_FI_Fickean_LINE2_Nx10_Nt8.dat
+errors are reported to /home/salazar/workspace/BaciExamples/ChemicalDiffusion/InitialDirichletDiscontinuity/1D/WorkFiles/General/../../Output/Results/MonoAMG_FI_Fickean_LINE2_Nx10_Nt80.err
+Entering jumbo reading mode for fluid discretization ...
+Read, create and partition elements      in....
+5.00679e-05 secs
+Entering jumbo reading mode for scatra discretization ...
+Read, create and partition elements      in....
+numele 10 nblock 1 bsize 10
+ele block 0 reading 1.00136e-04 secs / distrib time 1.69277e-05 secs
+parmetis:
+parmetis max nodal bandwith 3
+ZOLTAN Load balancing method = 10 (HYPERGRAPH)
+Graph rebalancing:    4.27961e-04 secs
+............................................... 2.26378e-03 secs
+Read, create and partition nodes
+numnode 11 nblock 1 bsize 11
+block 0 reading 5.19753e-05 secs / distrib 1.50204e-05 secs
+in............................................. 2.94209e-04 secs
+Complete discretization fluid            in....+--------------------------------------------------+
+| FillComplete() on discretization fluid           |
++--------------------------------------------------+
+2.00272e-05 secs
+Complete discretization scatra           in....+--------------------------------------------------+
+| FillComplete() on discretization scatra          |
++--------------------------------------------------+
+2.12193e-05 secs
+Read/generate conditions                          in....0.000963926 secs
+
+Total CPU Time for INPUT:       1.642e-01  sec 
+
+            |HH|	
+            )  (	
+            (  )	
+           _)  (_	  __        __     ___         _______	  			
+          |      |	\X\ \      / /  /X/ _ \	    |X|	 __   \		
+          ||||||||	 \X\ \    / /  /X/ /_\ \    |X| |__/  /		
+   ____   | CHEM |	  \X\ \  / /  /X/  ___  \   |X|	 _   /			
+  |~~~~~| |Diffus|	   \X\ \/ /  /X/  / \X\  \  |X| |\X\ \	
+  `--,--' ||||||||	    \X\__/  /X/__/   \X\__\ |X|_| \X\_\	
+     |    |      |	
+   __|__  |______|	
++--------------------------------------------------+
+| FillComplete() on discretization fluid           |
+| AssignDegreesOfFreedom() ...                     |
+| InitializeElements() ...                         |
+| BoundaryConditionsGeometry() ...                 |
++--------------------------------------------------+
++--------------------------------------------------+
+| FillComplete() on discretization scatra          |
+| AssignDegreesOfFreedom() ...                     |
+| InitializeElements() ...                         |
+| BoundaryConditionsGeometry() ...                 |
++--------------------------------------------------+
++--------------------------------------------------+
+| FillComplete() on discretization scatra          |
+| AssignDegreesOfFreedom() ...                     |
+| InitializeElements() ...                         |
+| BoundaryConditionsGeometry() ...                 |
++--------------------------------------------------+
++--------------------------------------------------+
+| FillComplete() on discretization scatra          |
+| AssignDegreesOfFreedom() ...                     |
+| InitializeElements() ...                         |
+| BoundaryConditionsGeometry() ...                 |
++--------------------------------------------------+
+Fixing Block 1 ML Nullspace
+Fixing Block 2 ML Nullspace
+Fixing Block 1 ML Nullspace
+Fixing Block 2 ML Nullspace
+
+TIME:  1.4881e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    1/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  4.266e+01   |      --      |  4.265e+01       | (      --     ,te= 2.811e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  1.208e+00   |  3.825e-02   |  7.232e-01       | (ts= 9.740e-03,te= 1.550e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  1.282e+00   |  9.716e-03   |  8.501e-01       | (ts= 8.124e-03,te= 2.639e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  1.430e+00   |  1.085e-02   |  1.143e+00       | (ts= 8.445e-03,te= 1.690e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  9.541e-01   |  1.016e-02   |  7.511e-01       | (ts= 8.040e-03,te= 1.571e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  5.522e-01   |  7.052e-03   |  3.769e-01       | (ts= 7.931e-03,te= 1.578e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  2.038e-01   |  3.717e-03   |  1.484e-01       | (ts= 7.975e-03,te= 1.590e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  7.414e-02   |  1.599e-03   |  3.635e-02       | (ts= 7.939e-03,te= 1.771e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  2.466e-02   |  5.207e-04   |  1.180e-02       | (ts= 7.950e-03,te= 1.540e-04)
+|   10/ 50   |  1.000e-10[L_2 ]  |  6.254e-03   |  1.093e-04   |  3.199e-03       | (ts= 8.018e-03,te= 1.791e-04)
+|   11/ 50   |  1.000e-10[L_2 ]  |  1.670e-03   |  3.403e-05   |  9.045e-04       | (ts= 7.955e-03,te= 1.571e-04)
+|   12/ 50   |  1.000e-10[L_2 ]  |  4.549e-04   |  9.961e-06   |  2.362e-04       | (ts= 7.917e-03,te= 1.571e-04)
+|   13/ 50   |  1.000e-10[L_2 ]  |  1.112e-04   |  1.815e-06   |  5.696e-05       | (ts= 7.932e-03,te= 1.569e-04)
+|   14/ 50   |  1.000e-10[L_2 ]  |  3.048e-05   |  6.233e-07   |  1.632e-05       | (ts= 7.983e-03,te= 1.569e-04)
+|   15/ 50   |  1.000e-10[L_2 ]  |  8.120e-06   |  1.678e-07   |  4.398e-06       | (ts= 7.929e-03,te= 1.640e-04)
+|   16/ 50   |  1.000e-10[L_2 ]  |  1.994e-06   |  3.199e-08   |  1.027e-06       | (ts= 7.995e-03,te= 1.590e-04)
+|   17/ 50   |  1.000e-10[L_2 ]  |  5.537e-07   |  1.163e-08   |  3.022e-07       | (ts= 8.088e-03,te= 1.740e-04)
+|   18/ 50   |  1.000e-10[L_2 ]  |  1.440e-07   |  2.848e-09   |  7.936e-08       | (ts= 8.109e-03,te= 1.650e-04)
+|   19/ 50   |  1.000e-10[L_2 ]  |  3.580e-08   |  5.860e-10   |  1.829e-08       | (ts= 7.945e-03,te= 1.590e-04)
+|   20/ 50   |  1.000e-10[L_2 ]  |  1.002e-08   |  2.150e-10   |  5.644e-09       | (ts= 7.975e-03,te= 1.669e-04)
+|   21/ 50   |  1.000e-10[L_2 ]  |  2.548e-09   |  4.794e-11   |  1.387e-09       | (ts= 8.000e-03,te= 1.571e-04)
+|   22/ 50   |  1.000e-10[L_2 ]  |  6.453e-10   |  1.104e-11   |  3.539e-10       | (ts= 7.954e-03,te= 1.569e-04)
+|   23/ 50   |  1.000e-10[L_2 ]  |  1.805e-10   |  3.913e-12   |  1.020e-10       | (ts= 8.004e-03,te= 1.550e-04)
+|   24/ 50   |  1.000e-10[L_2 ]  |  4.507e-11   |  8.027e-13   |  2.340e-11       | (ts= 7.935e-03,te= 1.559e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 148.809524):
+ concentration  8.73285779e-08
+ chemical potential  3.15863967e-11
+ 
+
+TIME:  2.9762e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    2/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  1.227e+00   |      --      |  6.767e-01       | (      --     ,te= 1.590e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  2.906e-01   |  1.150e-02   |  1.858e-01       | (ts= 7.963e-03,te= 1.602e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  8.437e-02   |  2.632e-03   |  3.949e-02       | (ts= 7.967e-03,te= 1.590e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  2.117e-02   |  6.460e-04   |  1.027e-02       | (ts= 7.975e-03,te= 1.578e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  3.654e-03   |  9.192e-05   |  1.835e-03       | (ts= 7.991e-03,te= 1.700e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  5.907e-04   |  1.335e-05   |  3.283e-04       | (ts= 8.022e-03,te= 1.650e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  1.032e-04   |  2.585e-06   |  5.493e-05       | (ts= 7.944e-03,te= 1.581e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  1.598e-05   |  3.298e-07   |  8.055e-06       | (ts= 7.942e-03,te= 1.578e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  2.743e-06   |  6.464e-08   |  1.554e-06       | (ts= 7.953e-03,te= 1.590e-04)
+|   10/ 50   |  1.000e-10[L_2 ]  |  4.507e-07   |  1.030e-08   |  2.567e-07       | (ts= 7.957e-03,te= 1.590e-04)
+|   11/ 50   |  1.000e-10[L_2 ]  |  7.130e-08   |  1.481e-09   |  4.083e-08       | (ts= 7.956e-03,te= 1.700e-04)
+|   12/ 50   |  1.000e-10[L_2 ]  |  1.243e-08   |  3.014e-10   |  7.200e-09       | (ts= 8.052e-03,te= 1.681e-04)
+|   13/ 50   |  1.000e-10[L_2 ]  |  1.939e-09   |  4.029e-11   |  9.700e-10       | (ts= 7.932e-03,te= 1.700e-04)
+|   14/ 50   |  1.000e-10[L_2 ]  |  3.258e-10   |  7.413e-12   |  1.790e-10       | (ts= 7.956e-03,te= 1.581e-04)
+|   15/ 50   |  1.000e-10[L_2 ]  |  5.448e-11   |  1.275e-12   |  3.097e-11       | (ts= 7.957e-03,te= 1.590e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 297.619048):
+ concentration  2.83204231e-08
+ chemical potential  3.20672921e-11
+ 
+
+TIME:  4.4643e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    3/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  6.005e-01   |      --      |  2.247e-01       | (      --     ,te= 1.509e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  1.247e-01   |  7.868e-03   |  5.945e-02       | (ts= 7.859e-03,te= 1.590e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  2.407e-02   |  1.276e-03   |  1.188e-02       | (ts= 8.051e-03,te= 1.681e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  3.308e-03   |  1.454e-04   |  1.720e-03       | (ts= 8.074e-03,te= 1.590e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  3.391e-04   |  1.095e-05   |  1.681e-04       | (ts= 7.980e-03,te= 1.588e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  3.953e-05   |  1.431e-06   |  2.276e-05       | (ts= 7.980e-03,te= 1.652e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  4.185e-06   |  1.335e-07   |  2.236e-06       | (ts= 7.981e-03,te= 1.578e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  4.563e-07   |  1.480e-08   |  2.663e-07       | (ts= 7.961e-03,te= 1.671e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  5.145e-08   |  1.748e-09   |  2.782e-08       | (ts= 7.935e-03,te= 1.590e-04)
+|   10/ 50   |  1.000e-10[L_2 ]  |  5.311e-09   |  1.583e-10   |  2.769e-09       | (ts= 8.076e-03,te= 1.740e-04)
+|   11/ 50   |  1.000e-10[L_2 ]  |  6.127e-10   |  2.115e-11   |  3.637e-10       | (ts= 8.018e-03,te= 1.578e-04)
+|   12/ 50   |  1.000e-10[L_2 ]  |  6.412e-11   |  1.969e-12   |  3.348e-11       | (ts= 7.978e-03,te= 1.581e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 446.428571):
+ concentration  1.79261888e-08
+ chemical potential  3.22758409e-11
+ 
+
+TIME:  5.9524e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    4/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  4.319e-01   |      --      |  1.744e-01       | (      --     ,te= 1.512e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  6.133e-02   |  5.961e-03   |  2.845e-02       | (ts= 7.843e-03,te= 1.559e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  7.864e-03   |  6.443e-04   |  3.811e-03       | (ts= 7.953e-03,te= 1.578e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  6.718e-04   |  4.118e-05   |  3.536e-04       | (ts= 7.978e-03,te= 1.571e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  4.799e-05   |  2.285e-06   |  2.508e-05       | (ts= 8.058e-03,te= 1.581e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  3.890e-06   |  2.025e-07   |  2.219e-06       | (ts= 7.899e-03,te= 1.590e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  2.782e-07   |  1.226e-08   |  1.469e-07       | (ts= 7.932e-03,te= 1.690e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  2.178e-08   |  1.072e-09   |  1.202e-08       | (ts= 7.970e-03,te= 1.571e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  1.632e-09   |  7.528e-11   |  8.936e-10       | (ts= 8.074e-03,te= 1.628e-04)
+|   10/ 50   |  1.000e-10[L_2 ]  |  1.203e-10   |  5.490e-12   |  7.133e-11       | (ts= 7.980e-03,te= 1.550e-04)
+|   11/ 50   |  1.000e-10[L_2 ]  |  9.509e-12   |  4.637e-13   |  5.343e-12       | (ts= 8.077e-03,te= 1.569e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 595.238095):
+ concentration  1.37891789e-08
+ chemical potential  3.23963789e-11
+ 
+
+TIME:  7.4405e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    5/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  3.268e-01   |      --      |  1.424e-01       | (      --     ,te= 1.500e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  3.196e-02   |  4.587e-03   |  1.516e-02       | (ts= 7.879e-03,te= 1.602e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  2.802e-03   |  3.361e-04   |  1.324e-03       | (ts= 8.003e-03,te= 1.762e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  1.624e-04   |  1.366e-05   |  8.445e-05       | (ts= 8.159e-03,te= 1.581e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  8.357e-06   |  5.760e-07   |  4.485e-06       | (ts= 7.882e-03,te= 1.621e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  4.813e-07   |  3.485e-08   |  2.707e-07       | (ts= 8.265e-03,te= 1.631e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  2.443e-08   |  1.515e-09   |  1.352e-08       | (ts= 8.073e-03,te= 1.619e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  1.380e-09   |  9.674e-11   |  7.499e-10       | (ts= 8.030e-03,te= 1.569e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  7.239e-11   |  4.559e-12   |  3.812e-11       | (ts= 8.045e-03,te= 1.550e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 744.047619):
+ concentration  1.16591431e-08
+ chemical potential  3.24735501e-11
+ 
+
+TIME:  8.9286e+02/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    6/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  2.492e-01   |      --      |  1.113e-01       | (      --     ,te= 1.490e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  1.726e-02   |  3.531e-03   |  8.187e-03       | (ts= 7.853e-03,te= 1.550e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  1.065e-03   |  1.807e-04   |  4.925e-04       | (ts= 7.987e-03,te= 1.569e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  4.385e-05   |  5.002e-06   |  2.252e-05       | (ts= 7.984e-03,te= 1.671e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  1.652e-06   |  1.600e-07   |  8.896e-07       | (ts= 8.054e-03,te= 1.562e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  6.907e-08   |  6.827e-09   |  3.852e-08       | (ts= 7.965e-03,te= 1.562e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  2.547e-09   |  2.195e-10   |  1.448e-09       | (ts= 7.979e-03,te= 1.569e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  1.050e-10   |  1.019e-11   |  5.687e-11       | (ts= 7.950e-03,te= 1.578e-04)
+|    9/ 50   |  1.000e-10[L_2 ]  |  4.064e-12   |  3.408e-13   |  2.181e-12       | (ts= 7.968e-03,te= 1.581e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 892.857143):
+ concentration  1.04149073e-08
+ chemical potential  3.25254948e-11
+ 
+
+TIME:  1.0417e+03/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    7/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  1.903e-01   |      --      |  8.578e-02       | (      --     ,te= 1.519e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  9.534e-03   |  2.714e-03   |  4.500e-03       | (ts= 7.894e-03,te= 1.569e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  4.238e-04   |  9.932e-05   |  1.926e-04       | (ts= 8.005e-03,te= 1.581e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  1.271e-05   |  1.949e-06   |  6.452e-06       | (ts= 7.986e-03,te= 1.631e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  3.542e-07   |  4.727e-08   |  1.901e-07       | (ts= 7.970e-03,te= 1.581e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  1.092e-08   |  1.455e-09   |  6.051e-09       | (ts= 7.977e-03,te= 1.709e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  2.967e-10   |  3.501e-11   |  1.714e-10       | (ts= 8.082e-03,te= 1.609e-04)
+|    8/ 50   |  1.000e-10[L_2 ]  |  9.032e-12   |  1.191e-12   |  4.884e-12       | (ts= 8.037e-03,te= 1.528e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 1041.666667):
+ concentration  9.63228153e-09
+ chemical potential  3.25614831e-11
+ 
+
+TIME:  1.1905e+03/ 1.1905e+03  DT =  1.4881e+02  One-Step-Theta (theta = 6.60e-01) STEP =    8/   8
++------------+-------------------+--------------+--------------+------------------+
+|- step/max -|- tol      [norm] -|-- con-res ---|-- con-inc ---|-- con-res-inf ---|
+|    1/ 50   |  1.000e-10[L_2 ]  |  1.454e-01   |      --      |  6.573e-02       | (      --     ,te= 1.562e-04)
+|    2/ 50   |  1.000e-10[L_2 ]  |  5.350e-03   |  2.083e-03   |  2.510e-03       | (ts= 8.012e-03,te= 1.550e-04)
+|    3/ 50   |  1.000e-10[L_2 ]  |  1.741e-04   |  5.550e-05   |  7.940e-05       | (ts= 7.976e-03,te= 1.659e-04)
+|    4/ 50   |  1.000e-10[L_2 ]  |  3.861e-06   |  7.898e-07   |  1.940e-06       | (ts= 7.988e-03,te= 1.619e-04)
+|    5/ 50   |  1.000e-10[L_2 ]  |  8.019e-08   |  1.454e-08   |  4.283e-08       | (ts= 7.982e-03,te= 1.550e-04)
+|    6/ 50   |  1.000e-10[L_2 ]  |  1.840e-09   |  3.283e-10   |  1.015e-09       | (ts= 7.949e-03,te= 1.571e-04)
+|    7/ 50   |  1.000e-10[L_2 ]  |  3.734e-11   |  5.945e-12   |  2.166e-11       | (ts= 7.979e-03,te= 1.631e-04)
++------------+-------------------+--------------+--------------+------------------+
+
+Relative L2_err for plane sheet using series of error functions (time = 1190.476190):
+ concentration  9.11621095e-09
+ chemical potential  3.25868725e-11
+ 
+=========================================================================================
+
+                          TimeMonitor results over 1 processor
+
+Timer Name                                                    Global time (num calls)    
+-----------------------------------------------------------------------------------------
+DRT::Discretization::Evaluate                                 0.01022 (106)              
+DRT::Discretization::Evaluate LocationVector                  0.0007901 (1060)           
+DRT::Discretization::Evaluate PreEvaluate                     0.0002241 (106)            
+DRT::Discretization::Evaluate Resize                          0.0001142 (1060)           
+DRT::Discretization::Evaluate assemble                        0.002258 (1060)            
+DRT::Discretization::Evaluate elements                        0.006562 (1060)            
+DRT::Discretization::SetState                                 0.001501 (1436)            
+Epetra_CrsMatrix::Multiply(TransA,X,Y)                        0.002066 (9636)            
+Epetra_CrsMatrix::Solve(Upper,Trans,UnitDiag,X,Y)             0.001216 (6192)            
+Ifpack_ILU::ApplyInverse                                      0.002873 (3096)            
+-----------------------------------------------------------------------------------------
+Ifpack_ILU::ApplyInverse - Solve                              0.001963 (3096)            
+Ifpack_ILU::Compute                                           0.007061 (348)             
+Ifpack_ILU::ComputeSetup                                      0.001728 (348)             
+Ifpack_ILU::Initialize                                        0.004619 (348)             
+LINALG::DefaultBlockMatrixStrategy::Complete                  3.839e-05 (182)            
+LINALG::SOLVER::AMGNXN::BgsSmoother::Solve                    0.04449 (1548)             
+LINALG::SOLVER::AMGNXN::BlockedMatrix::Apply                  0.004479 (3612)            
+LINALG::SOLVER::AMGNXN::BlockedVector::DeepCopy               0.008202 (1.651e+04)       
+LINALG::SOLVER::AMGNXN::CoupledAmg::Setup                     0.529 (87)                 
+LINALG::SOLVER::AMGNXN::DiagonalBlockedMatrix::Apply          0.0006964 (1032)           
+-----------------------------------------------------------------------------------------
+LINALG::SOLVER::AMGNXN::Hierarchies::BuildMueLuHierarchy      0.4479 (174)               
+LINALG::SOLVER::AMGNXN::Hierarchies::Setup                    0.458 (87)                 
+LINALG::SOLVER::AMGNXN::MonolithicHierarchy::BuildSmoother    0.04924 (174)              
+LINALG::SOLVER::AMGNXN::MonolithicHierarchy::Setup()          0.05889 (87)               
+LINALG::SOLVER::AMGnxn_Operator::ApplyInverse                 0.05242 (516)              
+LINALG::SOLVER::AMGnxn_Operator::Setup                        0.5316 (87)                
+LINALG::SOLVER::AMGnxn_Preconditioner::Setup                  0.6075 (87)                
+LINALG::Solver:  0)   TranslateSolverParameters               4.292e-05 (1)              
+LINALG::Solver:  1)   Setup                                   0.6306 (87)                
+LINALG::Solver:  1.1)   CreatePreconditioner                  0.01967 (87)               
+-----------------------------------------------------------------------------------------
+LINALG::Solver:  2)   Solve                                   0.06613 (87)               
+LINALG::SparseMatrix::Complete(domain,range)                  5.46e-05 (728)             
+SCATRA:       + apply DBC to system                           0.0001643 (95)             
+SCATRA:       + call linear solver                            0.6972 (87)                
+SCATRA:       + element calls                                 0.01574 (95)               
+SCATRA:      + apply dirich cond.                             0.0002875 (9)              
+SCATRA:    + output of solution                               0.004878 (9)               
+SCATRA:    + prepare time step                                0.000633 (8)               
+SCATRA:   + nonlin. iteration/lin. solve                      0.715 (8)                  
+SCATRA:  + time loop                                          0 (1)                      
+-----------------------------------------------------------------------------------------
+ZZ Entire Transpose                                           0.008173 (696)             
+=========================================================================================
+
+Total CPU Time for CALCULATION: 7.294e-01  sec 
+
+processor 0 finished normally

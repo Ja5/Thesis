@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+-->
+<VTKFile type="Collection" version="0.1" ByteOrder="LittleEndian">
+  <Collection>
+    <DataSet timestep="0" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-00.pvtu"/>
+    <DataSet timestep="37.2024" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-01.pvtu"/>
+    <DataSet timestep="74.4048" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-02.pvtu"/>
+    <DataSet timestep="111.607" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-03.pvtu"/>
+    <DataSet timestep="148.81" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-04.pvtu"/>
+    <DataSet timestep="186.012" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-05.pvtu"/>
+    <DataSet timestep="223.214" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-06.pvtu"/>
+    <DataSet timestep="260.417" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-07.pvtu"/>
+    <DataSet timestep="297.619" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-08.pvtu"/>
+    <DataSet timestep="334.821" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-09.pvtu"/>
+    <DataSet timestep="372.024" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-10.pvtu"/>
+    <DataSet timestep="409.226" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-11.pvtu"/>
+    <DataSet timestep="446.429" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-12.pvtu"/>
+    <DataSet timestep="483.631" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-13.pvtu"/>
+    <DataSet timestep="520.833" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-14.pvtu"/>
+    <DataSet timestep="558.036" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-15.pvtu"/>
+    <DataSet timestep="595.238" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-16.pvtu"/>
+    <DataSet timestep="632.44" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-17.pvtu"/>
+    <DataSet timestep="669.643" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-18.pvtu"/>
+    <DataSet timestep="706.845" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-19.pvtu"/>
+    <DataSet timestep="744.048" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-20.pvtu"/>
+    <DataSet timestep="781.25" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-21.pvtu"/>
+    <DataSet timestep="818.452" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-22.pvtu"/>
+    <DataSet timestep="855.655" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-23.pvtu"/>
+    <DataSet timestep="892.857" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-24.pvtu"/>
+    <DataSet timestep="930.06" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-25.pvtu"/>
+    <DataSet timestep="967.262" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-26.pvtu"/>
+    <DataSet timestep="1004.46" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-27.pvtu"/>
+    <DataSet timestep="1041.67" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-28.pvtu"/>
+    <DataSet timestep="1078.87" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-29.pvtu"/>
+    <DataSet timestep="1116.07" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-30.pvtu"/>
+    <DataSet timestep="1153.27" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-31.pvtu"/>
+    <DataSet timestep="1190.48" group="" part="0" file="MonoNM_FI_Fickean_LINE2_Nx10_Nt32-files/scatra-32.pvtu"/>
+  </Collection>
+</VTKFile>
