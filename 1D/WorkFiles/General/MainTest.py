@@ -70,10 +70,25 @@ Nt = int(2**powNt)
 
 headerFile = 'InitialDiscontinuity.head'
 path_header = cwd + '/../../BaseFiles/' + headerFile
+
+# To output only the needed results for reference
+ResemblanceRatio = Nt/(samplePoints + 2)
+find = 'RESULTSEVRY'
+replace = 'RESULTSEVRY                     ' + str(ResemblanceRatio)
+from Create_datFile import Modify_datFile
+Modify_datFile(find, replace, path_header)
+
 for Schm in Scheme:
     for EleTyp in ElementType:
         for Mod in Model:
             print TestFile('Mono', 'NM', Schm, Mod, EleTyp, Nx, Nt, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, 'SR', '')
+
+# Setting for normal test
+ResemblanceRatio = Nt/(samplePoints + 2)
+find = 'RESULTSEVRY'
+replace = 'RESULTSEVRY                     1' 
+Modify_datFile(find, replace, path_header)
+
 
 #********************************************Test1
 # Omega_hFix test
