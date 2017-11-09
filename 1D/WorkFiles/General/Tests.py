@@ -123,8 +123,6 @@ def TestFile(AlgCoupling, Strategy, Scheme, Model, ElementType, Nx, Nt, L, path_
 
         # Add here the condition to run for the numerical comparison & generating *.relerror file
 
-        if 'h' in Action:
-
         if 'P' in Action:
             from PostProcess_Tools import SaveListIntoFile
             baseName_PostProcess = AlgCoupling + Strategy + \
@@ -166,3 +164,24 @@ def TestFile(AlgCoupling, Strategy, Scheme, Model, ElementType, Nx, Nt, L, path_
         print 'ERROR: The dat file for this test does not exist' + '\n\t' + path_datFile
 
 # think what to do with relerror files, how to direct them idependet of it is baci created or local
+
+def ReadTestParameters(fileName):
+    with open(fileName, 'r') as f:
+        for line in f:
+            if 'AlgCoupling' in line:
+                # Remove brackets and '', remove \n, split from =
+                temp = line.translate(None, "[]' ").strip().split('=', 1)[1]
+                AlgCoupling = temp.split(',')
+            elif 'Strategy' in line:
+                temp = line.translate(None, "[]' ").strip().split('=', 1)[1]
+                Strategy = temp.split(',')
+            elif 'Scheme' in line:
+                temp = line.translate(None, "[]' ").strip().split('=', 1)[1]
+                Scheme = temp.split(',')
+            elif 'ElementType' in line:
+                temp = line.translate(None, "[]' ").strip().split('=', 1)[1]
+                ElementType = temp.split(',')
+            elif 'Model' in line:
+                temp = line.translate(None, "[]' ").strip().split('=', 1)[1]
+                Model = temp.split(',')
+    return [AlgCoupling, Strategy, Scheme, ElementType, Model]
