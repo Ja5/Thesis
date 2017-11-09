@@ -72,7 +72,7 @@ headerFile = 'InitialDiscontinuity.head'
 path_header = cwd + '/../../BaseFiles/' + headerFile
 
 # To output only the needed results for reference
-ResemblanceRatio = Nt/(samplePoints + 2)
+ResemblanceRatio = Nt / (samplePoints + 2)
 find = 'RESULTSEVRY'
 replace = 'RESULTSEVRY                     ' + str(ResemblanceRatio)
 from Create_datFile import Modify_datFile
@@ -84,9 +84,9 @@ for Schm in Scheme:
             print TestFile('Mono', 'NM', Schm, Mod, EleTyp, Nx, Nt, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, 'SR', '')
 
 # Setting for normal test
-ResemblanceRatio = Nt/(samplePoints + 2)
+ResemblanceRatio = Nt / (samplePoints + 2)
 find = 'RESULTSEVRY'
-replace = 'RESULTSEVRY                     1' 
+replace = 'RESULTSEVRY                     1'
 Modify_datFile(find, replace, path_header)
 
 
@@ -108,5 +108,5 @@ for AlgC in AlgCoupling:
             for EleTyp in ElementType:
                 for Mod in Model:
                     print AlgC + '_' + Strg + '_' + Schm + '_' + Mod + '_' + EleTyp + '_Nx' + str(Nx) + '_Nt' + str(Nt)
-                    #Omega_hFix(AlgCoupling, Strategy, Scheme, Model, ElementType, Nx, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
-                    #RatioNxNt_Fix(AlgCoupling, Strategy, Scheme, Model, ElementType, ratio, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
+                    #Omega_hFix(AlgC, Strg, Schm, Mod, EleTyp, Nx, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
+                    #RatioNxNt_Fix(AlgC, Strg, Schm, Mod, EleTyp, ratio, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)

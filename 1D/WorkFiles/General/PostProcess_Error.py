@@ -111,6 +111,8 @@ def GetAxisCoordinates(eleCoord, axis, NodesXele):
             x.append(eleCoord[i][2])
     return x
 
+# Computes the Error between two numerical solutions depending on the type of Element and mesh used
+
 
 def ComputeErrorsNumericReference(SimulationFileName, ReferenceFileName, ElementType, Nx):
     from FEM import ElementIntegral
@@ -164,13 +166,29 @@ def ComputeErrorsNumericReference(SimulationFileName, ReferenceFileName, Element
     #print [math.sqrt(Area_RefC), math.sqrt(Area_RefMu)]
     return [math.sqrt(ErrorC) / math.sqrt(Area_RefC), math.sqrt(ErrorMu) / math.sqrt(Area_RefMu)]
 
+# Appends error between two numerical solutions in ErrorFileName
 
-def AppendErrorFile(SimulationFileName, ReferenceFileName, step, dt, ElementType, Nx):
+
+def AppendErrorFile(ErrorFileName, SimulationFileName, ReferenceFileName, step, dt, ElementType, Nx):
     with open(ErrorFileName, 'a') as f:
         Errors = ComputeErrorsNumericReference(
             SimulationFileName, ReferenceFileName, ElementType, Nx)
         f.write(str(step) + ' ' + str(dt * step) + ' ' +
                 str(Errors).translate(None, "[],;") + '\n')
+
+# Fills ErrorFileName for all time steps by calling AppendErrorFile
+
+
+def Fill_ErrorNumRefFile(ErrorFileName, SimulationFolderName, ReferenceFolderName, dt, ElementType, Nx):
+    for step in xrange(Nt + 1):
+        SimulationFileName = SimulationFolderName + '/scatra-' + \
+            str(step) + '-0.vtu'
+        ReferenceFileName = ReferenceFolderName + '/scatra-' + \
+            str(step + 1) + '-0.vtu'
+
+        AppendErrorFile(ErrorFileName, SimulationFileName,
+                        ReferenceFileName, step, dt, ElementType, Nx)
+
 
 # # ------------------------------------------------------------------
 # # ------------------------------------------------------------------
@@ -181,6 +199,9 @@ def AppendErrorFile(SimulationFileName, ReferenceFileName, step, dt, ElementType
 
 #AlgCoupling,Strategy,Scheme,ElementType1D,Model = ReadTestParameters()
 
+# ********************************************************************************
+# Example to compute error between two numerical results
+# ********************************************************************************
 Action = 'SRPhNx=10-Nt=11'
 
 Omega, Nt = ExtractRefDataFromAction(Action)
@@ -191,6 +212,7 @@ import os
 cwd = os.getcwd()
 dir_Results = cwd + '/../../Output/Results'
 fileName = '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-1-0.vtu'
+
 
 # Get values for Current simulation
 filepath = dir_Results + fileName
@@ -204,20 +226,19 @@ ErrorFileName = dir_Results + '/HOLAerror.relerror'
 dt = 0.12
 Nt = 6
 
+
 with open(ErrorFileName, 'w') as f:
     Str = '| Step | Time | rel. L2-error concentration | rel. L2-error chemical potential |'
     f.write(Str + '\n')
 
-for step in xrange(Nt + 1):
-    SimulationFileName = dir_Results + \
-        '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-' + \
-        str(step) + '-0.vtu'
-    ReferenceFileName = dir_Results + \
-        '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files/scatra-' + \
-        str(step + 1) + '-0.vtu'
 
-    AppendErrorFile(SimulationFileName, ReferenceFileName,
-                    step, dt, ElementType, Nx)
+SimulationFolderName = dir_Results + \
+    '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files'
+ReferenceFolderName = dir_Results + \
+    '/MonoAMG_FI_Fickean_LINE2_Nx8_Nt8-files'
+
+Fill_ErrorNumRefFile(ErrorFileName, SimulationFolderName,
+                     ReferenceFolderName, dt, ElementType, Nx)
 
 
 print 'FIN'
