@@ -1,0 +1,1 @@
+Numsteps| dt | Concentrations Errors | Chem Potential Errors

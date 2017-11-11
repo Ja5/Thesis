@@ -1,0 +1,2 @@
+Numsteps| dt | Concentrations Errors | Chem Potential Errors
+'NaN' 'NaN';
