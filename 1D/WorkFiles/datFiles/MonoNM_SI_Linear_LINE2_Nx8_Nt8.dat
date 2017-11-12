@@ -1,0 +1,100 @@
+//
+// Maintainer: Jorge De Anda Salazar
+// fang@lnm.mw.tum.de
+// http://www.lnm.mw.tum.de/
+// 089 - 289-15251
+//
+==================================================================
+General Data File BACI
+==================================================================
+-----------------------------------------------------------------------TITLE
+created by pre_MEXodus
+----------------------------------------------------------------PROBLEM SIZE
+//ELEMENTS    			8
+//NODES       			9
+DIM           			1
+-----------------------------------------------------------------PROBLEM TYP
+PROBLEMTYP                      Variational_Chemical_Diffusion
+----------------------------------------------------SCALAR TRANSPORT DYNAMIC
+LINEAR_SOLVER                   1
+SOLVERTYPE                      nonlinear
+FSSUGRDIFF                      No
+INITFUNCNO                      1
+INITIALFIELD                    algebraic_field_dependence
+MAXTIME                         1190.47619048		// approx L^2/D 
+NUMSTEP                         8
+RESTARTEVRY                     10
+THETA                           0.66
+TIMEINTEGR                      One_Step_Theta
+TIMESTEP                        148.80952381
+VELOCITYFIELD                   zero
+RESULTSEVRY                     1
+MATID                           1
+SKIPINITDER                     Yes
+MATLAB_STATE_OUTPUT             No
+SEMIMPLICITFUNCTIONAL		Yes
+BLOCKPRECOND                    No
+CALCERROR                       AnalyticSeries
+------------------------------------------SCALAR TRANSPORT DYNAMIC/NONLINEAR
+CONVTOL                         1e-10
+ABSTOLRES                       1e-16
+ITEMAX                          50
+EXPLPREDICT                     no                              // yes -> oscillations for neutral
+ADAPTCONV                       no
+ADAPTCONV_BETTER                0.1
+--------------------------------------SCALAR TRANSPORT DYNAMIC/STABILIZATION
+STABTYPE                        no_stabilization
+DEFINITION_TAU                  Zero
+EVALUATION_MAT                  integration_point
+EVALUATION_TAU                  integration_point
+--------------------------------------------------------------------SOLVER 1
+SOLVER                          UMFPACK
+//--------------------------------------------------------------------SOLVER 1
+//SOLVER                          Aztec_MSR
+//AZPREC                          AMGnxn
+//AMGNXN_TYPE                     XML
+//AMGNXN_XML_FILE                 1Test.xml
+-------------------------------------------------------------------MATERIALS
+MAT 1 MAT_variational_chemicaldiffusion DIFFUSIVITY 8.4e-10 REFMU -190000.0 REFC 26.496 REFTEMP 298.15 GASCON 8.314 MODEL Linear
+----------------------------------------------------------------------FUNCT1
+COMPONENT 0 FUNCTION 0.0 	//initial concentration field: µmol/mm³ (related to chemical potential by the Mass action law)
+COMPONENT 1 FUNCTION -190.0e3 	//initial chemical potential
+----------------------------------------------------------------------FUNCT2
+COMPONENT 0 FUNCTION 0.0
+COMPONENT 1 FUNCTION -175.0e3
+----------------------------------------------------------------------FUNCT3
+COMPONENT 0 FUNCTION 0.0
+
+//Elements = 8
+//Nodes = 9
+-----------------------------------------------DESIGN DESCRIPTION
+NDPOINT                         2
+----------------------------------------------DESIGN POINT DIRICH CONDITIONS
+DPOINT                          1
+E 1 - NUMDOF 2 ONOFF 1 1 VAL 1.0 1.0 FUNCT 2 2
+---------------------------------------------DESIGN POINT NEUMANN CONDITIONS
+DPOINT                          1
+E 2 - NUMDOF 2 ONOFF 0 1 VAL 0 1.0 FUNCT 0 3 Live Mid
+-----------------------------------------------DNODE-NODE TOPOLOGY
+NODE	9 DNODE 1
+NODE	1 DNODE 2
+-----------------------------------------------------------------NODE COORDS
+NODE	1 COORD 0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00
+NODE	2 COORD 1.250000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	3 COORD 2.500000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	4 COORD 3.750000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	5 COORD 5.000000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	6 COORD 6.250000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	7 COORD 7.500000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	8 COORD 8.750000000000000e-04 0.000000000000000e+00 0.000000000000000e+00
+NODE	9 COORD 1.000000000000000e-03 0.000000000000000e+00 0.000000000000000e+00
+-----------------------------------------------------------------TRANSPORT ELEMENTS
+1 TRANSP LINE2  1 2    MAT 1 TYPE VariationalDiffusion
+2 TRANSP LINE2  2 3    MAT 1 TYPE VariationalDiffusion
+3 TRANSP LINE2  3 4    MAT 1 TYPE VariationalDiffusion
+4 TRANSP LINE2  4 5    MAT 1 TYPE VariationalDiffusion
+5 TRANSP LINE2  5 6    MAT 1 TYPE VariationalDiffusion
+6 TRANSP LINE2  6 7    MAT 1 TYPE VariationalDiffusion
+7 TRANSP LINE2  7 8    MAT 1 TYPE VariationalDiffusion
+8 TRANSP LINE2  8 9    MAT 1 TYPE VariationalDiffusion
+-------------------------------------------------------------------------END

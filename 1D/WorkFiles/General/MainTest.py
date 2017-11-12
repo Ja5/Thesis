@@ -51,52 +51,52 @@ L = 1e-3
 AlgCoupling, Strategy, Scheme, ElementType, Model = ReadTestParameters(
     'TestParameters.dat')
 
-samplePoints = 1
+samplePoints = 10
 Nt_list_float = pow(2, np.linspace(1 + 2, samplePoints + 2, samplePoints))
 Nt_list = [int(i) for i in Nt_list_float]
 
 #---------------------- SPECIFICS
 ErrorType = 'L2Error/TimeInt'
-Action = 'SRP'  # Setup/Run/PostProcess
+Action = 'P'  # Setup/Run/PostProcess
 Nx = 2**9
 
-#********************************************Compute numerical reference solution
+# #********************************************Compute numerical reference solution
 
-# Condition for maximum time step without spurious oscillaitons
-#-----
-powNt = math.floor(math.log(6 * Nx**2, 2))
-Nt = int(2**powNt)
-#-----
+# # Condition for maximum time step without spurious oscillaitons
+# #-----
+# powNt = math.floor(math.log(6 * Nx**2, 2))
+# Nt = int(2**powNt)
+# #-----
 
-headerFile = 'InitialDiscontinuity.head'
-path_header = cwd + '/../../BaseFiles/' + headerFile
+# headerFile = 'InitialDiscontinuity.head'
+# path_header = cwd + '/../../BaseFiles/' + headerFile
 
-# To output only the needed results for reference
-ResemblanceRatio = Nt / (samplePoints + 2)
-find = 'RESULTSEVRY'
-replace = 'RESULTSEVRY                     ' + str(ResemblanceRatio)
-from Create_datFile import Modify_datFile
-Modify_datFile(find, replace, path_header)
+# # To output only the needed results for reference
+# ResemblanceRatio = Nt / (samplePoints + 2)
+# find = 'RESULTSEVRY'
+# replace = 'RESULTSEVRY                     ' + str(ResemblanceRatio)
+# from Create_datFile import Modify_datFile
+# Modify_datFile(find, replace, path_header)
 
-for Schm in Scheme:
-    for EleTyp in ElementType:
-        for Mod in Model:
-            print TestFile('Mono', 'NM', Schm, Mod, EleTyp, Nx, Nt, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, 'SR', '')
+# for Schm in Scheme:
+#     for EleTyp in ElementType:
+#         for Mod in Model:
+#             print TestFile('Mono', 'NM', Schm, Mod, EleTyp, Nx, Nt, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, 'SR', '')
 
-# Setting for normal test
-ResemblanceRatio = Nt / (samplePoints + 2)
-find = 'RESULTSEVRY'
-replace = 'RESULTSEVRY                     1'
-Modify_datFile(find, replace, path_header)
+# # Setting for normal test
+# ResemblanceRatio = Nt / (samplePoints + 2)
+# find = 'RESULTSEVRY'
+# replace = 'RESULTSEVRY                     1'
+# Modify_datFile(find, replace, path_header)
 
 
-#********************************************Test1
+# #********************************************Test1
 # Omega_hFix test
 Nx = 2**9
 # Fix ratio test
 ratio = 1
 for AlgC in AlgCoupling:
-    for Strg in Strategy:
+    for Strg in ['NM']:  # Strategy:
         if AlgC != 'Mono' and (Strg != 'NM' or Strg != 'AMG'):
             break
         if Strg == 'AMG':
@@ -107,6 +107,8 @@ for AlgC in AlgCoupling:
         for Schm in Scheme:
             for EleTyp in ElementType:
                 for Mod in Model:
-                    print AlgC + '_' + Strg + '_' + Schm + '_' + Mod + '_' + EleTyp + '_Nx' + str(Nx) + '_Nt' + str(Nt)
-                    #Omega_hFix(AlgC, Strg, Schm, Mod, EleTyp, Nx, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
-                    #RatioNxNt_Fix(AlgC, Strg, Schm, Mod, EleTyp, ratio, Nt_list, L, path_header, dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
+                    # print AlgC + '_' + Strg + '_' + Schm + '_' + Mod + '_' + EleTyp + '_Nx' + str(Nx) + '_Nt' + str(Nt)
+                    Omega_hFix(AlgC, Strg, Schm, Mod, EleTyp, Nx, Nt_list, L, path_header, dir_baci,
+                               dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)
+                    RatioNxNt_Fix(AlgC, Strg, Schm, Mod, EleTyp, ratio, Nt_list, L, path_header,
+                                  dir_baci, dir_datFiles, dir_Results, dir_logFiles, dir_Plots, ErrorType, Action)

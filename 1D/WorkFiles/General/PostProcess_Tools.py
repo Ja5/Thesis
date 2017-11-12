@@ -8,9 +8,10 @@ import csv
 
 def SaveListIntoFile(fileName, listName):
     with open(fileName, "a") as output:
-	#output.write('Numsteps| dt | Concentrations Errors | Chem Potential Errors' + '\n')
-	for errorTest in listName:
-		output.write(str(errorTest).translate(None, "()#,") + ';\n')
+        #output.write('Numsteps| dt | Concentrations Errors | Chem Potential Errors' + '\n')
+        for errorTest in listName:
+            output.write(str(errorTest).translate(None, "()#,") + ';\n')
+
 
 def GetNodes_datFile(datFile):
     with open(datFile, 'r') as f:
@@ -38,9 +39,11 @@ def ReadNodeError_relErrorFile(fileName, node):
         dataStr = line.split()
         return float(dataStr[-2]), float(dataStr[-1])
 
-def ReadTempNodeError_relErrorFileXXX(fileName, timeStep):  # Rewritten below since next(f) creates StopItertion
+
+# Rewritten below since next(f) creates StopItertion
+def ReadTempNodeError_relErrorFileXXX(fileName, timeStep):
     with open(fileName, 'r') as f:
-        for _ in xrange(timeStep+1):   	# +1 due to title
+        for _ in xrange(timeStep + 1):   	# +1 due to title
             line = next(f)
         line = next(f)
         if not line:
@@ -49,18 +52,19 @@ def ReadTempNodeError_relErrorFileXXX(fileName, timeStep):  # Rewritten below si
         dataStr = line.split()
         return float(dataStr[-2]), float(dataStr[-1])
 
+
 def ReadTempNodeError_relErrorFile(fileName, timeStep):
     with open(fileName, 'r') as f:
-        for i,line in enumerate(f):   	# +1 due to title
-	    if i <= timeStep:
-		continue
+        for i, line in enumerate(f):   	# +1 due to title
+            if i <= timeStep:
+                continue
             if not line:
-            	print 'WARNING: File ended before reaching the time step: ' + str(timeStep) + '\n File:' + fileName
-            	return 0, 0
+                print 'WARNING: File ended before reaching the time step: ' + str(timeStep) + '\n File:' + fileName
+                return 0, 0
             dataStr = line.split()
-	    return float(dataStr[-2]), float(dataStr[-1])
-	print 'WARNING: File ended before reaching the time step: ' + str(timeStep) + '\n File:' + fileName
-	return 'NaN'
+            return float(dataStr[-2]), float(dataStr[-1])
+        print 'WARNING: File ended before reaching the time step: ' + str(timeStep) + '\n File:' + fileName
+        return 'NaN'
 
 
 def GetNodeCoordFrom_datFile(datFile, node):
@@ -77,22 +81,25 @@ def GetNodeCoordFrom_datFile(datFile, node):
                 break
     return coords[3:6]
 
+
 def GetFrom_datFile(datFile, String):
     with open(datFile, 'r') as f:
         while True:
             line = f.readline()
             if String in line:
                 tmp = line.split()
-		extract = tmp[-1]
+                extract = tmp[-1]
                 break
             if not line:
-		print 'ERROR: ' + String + ' not found in file :\n' + datFile
-		extract = -1
+                print 'ERROR: ' + String + ' not found in file :\n' + datFile
+                extract = -1
                 break
     return extract
 
 # Computes L2 Error per time step
-def L2Error_relErrorFile(datFile, resultsFile):   
+
+
+def L2Error_relErrorFile(datFile, resultsFile):
     ErrorC = 0
     ErrorMu = 0
     numstep = int(GetFrom_datFile(datFile, 'NUMSTEP'))
@@ -103,28 +110,30 @@ def L2Error_relErrorFile(datFile, resultsFile):
         tempError = ReadTempNodeError_relErrorFile(resultsFile, timeStep)
         if tempError == 'NaN':
             print 'ERROR: While substracting data from: ReadTempNodeError_relErrorFile\n' + 'file: ' + resultsFile
-	    return 'NaN', 'NaN'
+            return 'NaN', 'NaN'
         ErrorC = tempError[0] + ErrorC
         ErrorMu = tempError[1] + ErrorMu
-    return numstep, dt, ErrorC/numstep, ErrorMu/numstep
+    return numstep, dt, ErrorC / numstep, ErrorMu / numstep
 
-# Computes L2 Time integration Error 
-def TimeInt_relErrorFile(datFile, resultsFile):   
+# Computes L2 Time integration Error
+
+
+def TimeInt_relErrorFile(datFile, resultsFile):
     ErrorC = 0
     ErrorMu = 0
     numstep = int(GetFrom_datFile(datFile, 'NUMSTEP'))
     dt = float(GetFrom_datFile(datFile, 'TIMESTEP'))
-    tempError=[]
+    tempError = []
     if numstep == -1:
         print 'ERROR: NUMSTEP not found in call to: GetFrom_datFile \n From file : ' + datFile
 
-    for timeStep in xrange(1, numstep+1):
-	tempError.append(ReadTempNodeError_relErrorFile(resultsFile, timeStep))
+    for timeStep in xrange(1, numstep + 1):
+        tempError.append(ReadTempNodeError_relErrorFile(resultsFile, timeStep))
 
     ErrorC = np.trapz(zip(*tempError)[0], dx=dt)
     ErrorMu = np.trapz(zip(*tempError)[1], dx=dt)
 
-    return numstep, dt, ErrorC/float(numstep), ErrorMu/float(numstep)
+    return numstep, dt, ErrorC, ErrorMu
 
 
 def IntegrateFEMFrom_datFile(datFile):
@@ -183,8 +192,6 @@ def PlotError(ErrorfileName, Nt_list):
 # # ------------------------------------------------------------------
 
 
-
-
 #cwd = os.getcwd()
 #datFile = 'MonoNM_FI_LINE2_Nx4_Nt2.dat'
 #path_datFile = cwd + '/../datFiles/' + datFile
@@ -195,10 +202,10 @@ def PlotError(ErrorfileName, Nt_list):
 #datFile = path_datFile
 #node = 3
 
-#print ReadTempNodeError_relErrorFile('./../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.relerror', 8)
-#print L2Error_relErrorFile('./../../WorkFiles/datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.dat', './../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.relerror')
+# print ReadTempNodeError_relErrorFile('./../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.relerror', 8)
+# print L2Error_relErrorFile('./../../WorkFiles/datFiles/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.dat', './../../Output/Results/MonoNM_FI_Fickean_LINE2_Nx10_Nt8.relerror')
 
-#print L2Error_relErrorFile(datFile, resultsFile)
+# print L2Error_relErrorFile(datFile, resultsFile)
 # print GetFrom_datFile(datFile, 'TIMESTEP')
 
 # Errors = PostProcess_Omega_hFix(....)
