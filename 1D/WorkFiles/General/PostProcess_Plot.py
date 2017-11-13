@@ -103,7 +103,7 @@ def FileErrortn2Plot(fileName, tn, col):
     return 1
 
 
-def FileErrortf2Plot(fileName, tn, col):
+def FileErrortf2Plot(fileName, tn, col, TestType):
     # -------------------------------------Read File
     import csv
     from string import maketrans   # Required to call maketrans function.
@@ -112,6 +112,10 @@ def FileErrortf2Plot(fileName, tn, col):
     errorC = []
     errorMu = []
     baseName = fileName.split('/')[-1]
+
+    legName = baseName.split(
+        str(tn) + '_', 1)[1].split('.txt')[0].translate(maketrans("_", "-"))
+
     with open(fileName, 'r') as f:
         next(f)
         reader = csv.reader(f, delimiter=' ')
@@ -126,13 +130,13 @@ def FileErrortf2Plot(fileName, tn, col):
     plt.rc('font', family='serif')
 
     fig = plt.gcf()
+    fig.suptitle(r'\textbf{' + TestType + '}', fontsize=16)
 
     ax = plt.subplot(121)
     plt.xlabel(r'\textbf{Time Step: $\Delta t (s)$}')
     plt.ylabel(r'$E_{c}(t_n,Nx)$')
-    plt.title(r'\textbf{Relative Error Nx=512}')
-    pltC, = plt.loglog(
-        dtx, errorC, col, label=baseName[30:53].translate(maketrans("_", "-")))
+    plt.title('Error: Concentration')
+    pltC, = plt.loglog(dtx, errorC, col, label=legName)
  #   pltC.set_color(col)
     plt.legend(loc=0, shadow=True,
                title='tn =' + str(tn))
@@ -145,9 +149,9 @@ def FileErrortf2Plot(fileName, tn, col):
     ax = plt.subplot(122)
     plt.xlabel(r'\textbf{Time Step}: $\Delta t (s)$')
     plt.ylabel(r'$E_{\mu}(t_n,Nx)$')
-    plt.title(r'\textbf{Relative Error Nx=512}')
+    plt.title('Error: ChemicalPotential')
     pltMu, = plt.loglog(dtx, errorMu, col,
-                        label=baseName[30:53].translate(maketrans("_", "-")))
+                        label=legName)
 #    pltMu.set_color(col)
     plt.legend(loc=0, shadow=True,
                title='tn=' + str(tn))
@@ -208,7 +212,7 @@ def Tests2Plot_tf(TestType, AlgCoupling, Strategy, Scheme, ElementType, Model, N
                         fileError = CreateFile_Errortn(
                             baseName, Nx_list, tn, Nt_list, TestType)
                         print fileError
-                        FileErrortf2Plot(fileError, tn, lineFormat)
+                        FileErrortf2Plot(fileError, tn, lineFormat, TestType)
 
                         # if ElemTyp == 'LINE3':
                         #     PlotSlopes(fileName)
@@ -216,7 +220,8 @@ def Tests2Plot_tf(TestType, AlgCoupling, Strategy, Scheme, ElementType, Model, N
     # plt.show()
     fig = plt.gcf()
     # Saving figure
-    figName = os.getcwd() + '/../../Output/Plots/' + TestType + '_All_' + baseName
+    figName = os.getcwd() + '/../../Output/Plots/' + TestType + \
+        '_All_tn' + str(tn) + '_' + baseName
     fig.savefig(figName + '.pdf', bbox_inches='tight')
     # To later use in latex do...
     #fig.savefig(figName+'.pgf', bbox_inches='tight')
@@ -380,6 +385,19 @@ def Plot_AllTest_ErrorType():
                        Strategy, Scheme, ElementType, Model)
     return 1
 
+
+def Plot_AllTest_tn_ErrorType(Nt_list):
+    TestType = 'OmegaFixNx512'
+    Nx_list = [512, 512, 512, 512, 512, 512, 512, 512, 512, 512]
+    Tests2Plot_tf(TestType, AlgCoupling, Strategy, Scheme,
+                  ElementType, Model, Nx_list, Nt_list, tn)
+    TestType = 'RatioNxNt1'
+    ratio = 1
+    Nx_list = ratio * Nt_list
+    Tests2Plot_tf(TestType, AlgCoupling, Strategy, Scheme,
+                  ElementType, Model, Nx_list, Nt_list, tn)
+    return 1
+
 # --------------------------------------------------------------------------------
 # ----------------------------------    MAIN    ----------------------------------
 # --------------------------------------------------------------------------------
@@ -406,15 +424,12 @@ plt.style.use('mythesis')
 
 Color_list = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b']
 col = Color_list[1]
-TestType = 'RatioNxNt1'
-Nx_list = Nt_list
 
 # Plots from baseName all the matching lines between Nt_list
 # Plot_AllTest_tn(baseName, Nx_list, tn, Nt_list, TestType)
 
 # Plot TestType convergence plot at time tn
-Tests2Plot_tf(TestType, AlgCoupling, Strategy, Scheme,
-              ElementType, Model, Nx_list, Nt_list, tn)
+Plot_AllTest_tn_ErrorType(Nt_list)
 
 quit()
 # Creates the plots for all Test using all errortypes
